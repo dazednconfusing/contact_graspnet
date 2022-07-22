@@ -5,6 +5,7 @@ import numpy as np
 import time
 import glob
 import cv2
+import time
 
 import tensorflow.compat.v1 as tf
 
@@ -205,7 +206,7 @@ if __name__ == "__main__":
 
     print(str(global_config))
     print("pid: %s" % (str(os.getpid())))
-
+    tic = time.perf_counter()
     inference(
         global_config,
         FLAGS.ckpt_dir,
@@ -219,3 +220,5 @@ if __name__ == "__main__":
         skip_border_objects=FLAGS.skip_border_objects,
         visualize=FLAGS.visualize,
     )
+    toc = time.perf_counter()
+    print(f"In {toc-tic:.4f} seconds")
