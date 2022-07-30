@@ -26,6 +26,11 @@ conda env create -f contact_graspnet_env.yml
 sh compile_pointnet_tfops.sh
 ```
 
+- For servers you may need to set the following environment variable:
+```
+export QT_QPA_PLATFORM=offscreen
+```
+
 ### Hardware
 Training: 1x Nvidia GPU >= 24GB VRAM, >=64GB RAM  
 Inference: 1x Nvidia GPU >= 8GB VRAM (might work with less)
